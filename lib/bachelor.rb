@@ -1,9 +1,9 @@
 def get_first_name_of_season_winner(data, season)
   # code here
-  data[season].each do |people|
-       people.each do |k,v|
-        if v == "Winner"
-            full_name = people["name"]
+  data[season].each do |info|
+       info.each do |key,value|
+        if value == "Winner"
+            full_name = info["name"]
             return full_name.split(' ').first
         end
       end
