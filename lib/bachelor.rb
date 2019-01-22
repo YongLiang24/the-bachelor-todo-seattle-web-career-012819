@@ -13,10 +13,10 @@ end
 def get_contestant_name(data, occupation)
   # code here
   data.each do |season, array|
-    array.each do |people|
-      people.each do |k,v|
+    array.each do |name|
+      name.each do |k,v|
         if v == occupation
-          return people["name"]
+          return name["name"]
         end
       end
     end
