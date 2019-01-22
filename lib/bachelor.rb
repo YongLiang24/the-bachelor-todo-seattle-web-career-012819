@@ -12,7 +12,7 @@ end
 
 def get_contestant_name(data, occupation)
   # code here
-  data.each do |season, array|
+  data.each do |info, array|
     array.each do |name|
       name.each do |k,v|
         if v == occupation
@@ -26,9 +26,9 @@ end
 def count_contestants_by_hometown(data, hometown)
   # code here
   counter = 0
-  data.each do |season, array|
-    array.each do |hash|
-      hash.each do |k,v|
+  data.each do |info, array|
+    array.each do |home|
+      home.each do |k,v|
         if v == hometown
           counter += 1
         end
@@ -40,9 +40,9 @@ end
 
 def get_occupation(data, hometown)
   # code here
-  data.each do |season, array|
-    array.each do |hash|
-      hash.each do |k,v|
+  data.each do |info, array|
+    array.each do |home|
+      home.each do |k,v|
         if v == hometown
           return hash["occupation"]
         end
@@ -54,16 +54,16 @@ end
 def get_average_age_for_season(data, season)
   # code here
   age = 0
-count = 0
-  data[season].each do |hash|
-    hash.each do |k,v|
+  c = 0
+  data[season].each do |info|
+    info.each do |k,v|
       if k == "age"
-        count += 1
+        c += 1
         age += v.to_f
       end
     end
   end
 
-   answer = (age/count).round
+   answer = (age/c).round
 return answer
 end
