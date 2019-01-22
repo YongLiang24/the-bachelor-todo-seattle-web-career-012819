@@ -5,7 +5,7 @@ def get_first_name_of_season_winner(data, season)
         if v == "Winner"
             full_name = people["name"]
             return full_name.split(' ').first
-        end 
+        end
       end
     end
 end
